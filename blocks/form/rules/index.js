@@ -51,13 +51,13 @@ function handleActiveChild(id, form) {
 
 async function fieldChanged(payload, form, generateFormRendition) {
   const { changes, field: fieldModel } = payload;
+  const {
+    id, fieldType, readOnly, type, displayValue, displayFormat, displayValueExpression,
+    activeChild,
+  } = fieldModel;
+  const field = form.querySelector(`#${id}`);
   changes.forEach((change) => {
-    const {
-      id, fieldType, readOnly, type, displayValue, displayFormat, displayValueExpression,
-      activeChild,
-    } = fieldModel;
     const { propertyName, currentValue, prevValue } = change;
-    const field = form.querySelector(`#${id}`);
     if (!field) {
       return;
     }
@@ -182,6 +182,11 @@ async function fieldChanged(payload, form, generateFormRendition) {
         break;
     }
   });
+
+  const fieldWrapper = field.closest('.field-wrapper');
+  if (fieldWrapper?.dataset?.subscribe) {
+    fieldWrapper.dataset.fieldModel = JSON.stringify(fieldModel);
+  }
 }
 
 function formChanged(payload, form) {
