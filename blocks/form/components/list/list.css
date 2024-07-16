@@ -1,0 +1,28 @@
+
+.radio-wrapper .card-details {
+    border: 1px solid;
+    margin-bottom: 20px;
+    padding: 20px;
+    line-height: 26px;
+    letter-spacing: .9px;
+}
+
+input[type="radio"]:checked + label > .card-details {
+    border: 3px solid;
+}
+
+
+.card-details .title {
+    letter-spacing: 1.5px;
+    padding-bottom: 12px;
+    display: block;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+.card-details .more-details span {
+    font-size: 20px;
+    line-height: 16px;
+    letter-spacing: .9px;
+    margin-right: 16px;
+}

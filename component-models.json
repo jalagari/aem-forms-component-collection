@@ -3,7 +3,7 @@
         "id": "title",
         "fields": [
             {
-        	"component": "text",
+                "component": "text",
                 "valueType": "string",
                 "name": "jcr:title",
                 "value": "",
@@ -55,7 +55,7 @@
                 "multi": false
             },
             {
-        	"component": "text",
+                "component": "text",
                 "valueType": "string",
                 "name": "alt",
                 "value": "Default alt",
@@ -64,53 +64,53 @@
         ]
     },
     {
-    "id": "button",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "href",
-        "value": "",
-        "label": "Link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "text",
-        "value": "",
-        "label": "Text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "value": "",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "name": "type",
-        "value": "",
-        "label": "Type",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "default",
-            "value": ""
-          },
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
-          }
+        "id": "button",
+        "fields": [
+            {
+                "component": "text",
+                "valueType": "string",
+                "name": "href",
+                "value": "",
+                "label": "Link"
+            },
+            {
+                "component": "text",
+                "valueType": "string",
+                "name": "text",
+                "value": "",
+                "label": "Text"
+            },
+            {
+                "component": "text",
+                "valueType": "string",
+                "name": "title",
+                "value": "",
+                "label": "Title"
+            },
+            {
+                "component": "select",
+                "name": "type",
+                "value": "",
+                "label": "Type",
+                "valueType": "string",
+                "options": [
+                    {
+                        "name": "default",
+                        "value": ""
+                    },
+                    {
+                        "name": "primary",
+                        "value": "primary"
+                    },
+                    {
+                        "name": "secondary",
+                        "value": "secondary"
+                    }
+                ]
+            }
         ]
-      }
-    ]
-  },
-  {
+    },
+    {
         "id": "columns",
         "fields": [
             {
@@ -204,21 +204,35 @@
                         "value": "fd/af/components/guidesubmittype/email"
                     }
                 ],
-                "value" : ""
+                "value": ""
             },
             {
                 "component": "text",
                 "name": "restEndpointPostUrl",
                 "label": "URL For POST request",
                 "valueType": "string",
-                "condition": { "==": [{ "var": "actionType" }, "fd/af/components/guidesubmittype/restendpoint"] }
+                "condition": {
+                    "==": [
+                        {
+                            "var": "actionType"
+                        },
+                        "fd/af/components/guidesubmittype/restendpoint"
+                    ]
+                }
             },
             {
                 "component": "container",
                 "name": "email",
                 "label": "Email Configuration",
                 "collapsible": false,
-                "condition": { "==": [{ "var": "actionType" }, "fd/af/components/guidesubmittype/email"] },
+                "condition": {
+                    "==": [
+                        {
+                            "var": "actionType"
+                        },
+                        "fd/af/components/guidesubmittype/email"
+                    ]
+                },
                 "fields": [
                     {
                         "component": "text",
@@ -265,14 +279,28 @@
                         "name": "templatePath",
                         "label": "External template path",
                         "valueType": "string",
-                        "condition": { "==": [{ "var": "useExternalEmailTemplate" }, true] }
+                        "condition": {
+                            "==": [
+                                {
+                                    "var": "useExternalEmailTemplate"
+                                },
+                                true
+                            ]
+                        }
                     },
                     {
                         "component": "richtext",
                         "name": "template",
                         "label": "Email template",
                         "valueType": "string",
-                        "condition": { "!=": [{ "var": "useExternalEmailTemplate" }, true] }
+                        "condition": {
+                            "!=": [
+                                {
+                                    "var": "useExternalEmailTemplate"
+                                },
+                                true
+                            ]
+                        }
                     },
                     {
                         "component": "boolean",
@@ -1725,6 +1753,130 @@
                 "name": "formPath",
                 "value": "",
                 "label": "Form Path"
+            }
+        ]
+    },
+    {
+        "id": "location",
+        "fields": [
+            {
+                "component": "container",
+                "name": "basic",
+                "label": "Basic",
+                "collapsible": false,
+                "fields": [
+                    {
+                        "component": "text",
+                        "name": "name",
+                        "label": "Name",
+                        "valueType": "string",
+                        "required": true
+                    },
+                    {
+                        "component": "text",
+                        "name": "jcr:title",
+                        "label": "Label",
+                        "valueType": "string"
+                    },
+                    {
+                        "component": "text",
+                        "name": "placeholder",
+                        "label": "Placeholder text",
+                        "valueType": "string"
+                    },
+                    {
+                        "component": "text",
+                        "name": "key",
+                        "label": "API Key",
+                        "valueType": "string"
+                    },
+                    {
+                        "component": "text",
+                        "name": "dataRef",
+                        "label": "Bind reference",
+                        "valueType": "string"
+                    },
+                    {
+                        "component": "boolean",
+                        "name": "visible",
+                        "label": "Show Component",
+                        "valueType": "boolean",
+                        "value": true
+                    },
+                    {
+                        "component": "boolean",
+                        "name": "enabled",
+                        "label": "Enable Component",
+                        "valueType": "boolean",
+                        "value": true
+                    },
+                    {
+                        "component": "boolean",
+                        "name": "readOnly",
+                        "label": "Read-only",
+                        "valueType": "boolean"
+                    },
+                    {
+                        "component": "text",
+                        "name": "default",
+                        "label": "Default Value",
+                        "valueType": "string"
+                    },
+                    {
+                        "component": "boolean",
+                        "name": "unboundFormElement",
+                        "label": "Mark as Unbound Form Element",
+                        "valueType": "boolean"
+                    }
+                ]
+            },
+            {
+                "component": "container",
+                "name": "help",
+                "label": "Help Content",
+                "collapsible": true,
+                "fields": [
+                    {
+                        "component": "richtext",
+                        "name": "description",
+                        "label": "Help text",
+                        "valueType": "string"
+                    },
+                    {
+                        "component": "richtext",
+                        "name": "tooltip",
+                        "label": "Short description",
+                        "valueType": "string"
+                    }
+                ]
+            },
+            {
+                "component": "container",
+                "name": "validation",
+                "label": "Validation",
+                "collapsible": true,
+                "fields": [
+                    {
+                        "component": "boolean",
+                        "name": "required",
+                        "label": "Required",
+                        "valueType": "boolean"
+                    },
+                    {
+                        "component": "number",
+                        "name": "minimum",
+                        "label": "Minimum Value",
+                        "valueType": "number",
+                        "description": "Minimum length of the text in the field"
+                    },
+                    {
+                        "component": "number",
+                        "name": "maximum",
+                        "label": "Maximum Value",
+                        "valueType": "number",
+                        "description": "Maximum length of the text in the field"
+                    }
+                ]
             }
         ]
     }

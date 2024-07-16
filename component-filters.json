@@ -56,7 +56,10 @@
       "plain-text",
       "radio-group",
       "text-input",
-      "wizard"
+      "wizard",
+      "location",
+      "datetime",
+      "list"
     ]
   }
 ]
